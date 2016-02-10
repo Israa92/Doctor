@@ -11,5 +11,6 @@ namespace Doctor.Models
         public decimal Socker { get; set; }
         public decimal BloodPressure { get; set; }
         public decimal Cholesterol { get; set; }
+        public int MyProperty { get; set; }
     }
 }

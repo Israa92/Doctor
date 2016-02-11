@@ -64,15 +64,15 @@ namespace DoctorWPF
                 }
                 else
                 {
-                    errormessage.Text = "";
-                    SqlConnection con = new SqlConnection("Data Source=(localdb)\\mssqllocaldb;Initial Catalog=Doctor;Integrated Security=True;Pooling=False");
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("Insert into Registration(Username,Email,Age,Password)values(" + username + "," + email + "," + age + "," + password + ")", con);
-                    cmd.CommandType = CommandType.Text;
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                    errormessage.Text = "You have registered successfully.";
-                    //Reset();
+                    DoctorEntities db = new DoctorEntities();
+
+                    User u = new User();
+                    u.UserName = username;
+                    u.Email = email;
+                    u.Age = age;
+                    u.Password = password;
+                    db.User.Add(u);
+                    db.SaveChanges();
                 }
             }
         }

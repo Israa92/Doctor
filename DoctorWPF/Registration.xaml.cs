@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -64,7 +65,14 @@ namespace DoctorWPF
                 else
                 {
                     errormessage.Text = "";
-                    SqlConnection con = new SqlConnection("Data Source=(localdb)\mssqllocaldb;Initial Catalog=Doctor;Integrated Security=True;Pooling=False");
+                    SqlConnection con = new SqlConnection("Data Source=(localdb)\\mssqllocaldb;Initial Catalog=Doctor;Integrated Security=True;Pooling=False");
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("Insert into Registration(Username,Email,Age,Password)values(" + username + "," + email + "," + age + "," + password + ")", con);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    errormessage.Text = "You have registered successfully.";
+                    //Reset();
                 }
             }
         }
@@ -76,7 +84,9 @@ namespace DoctorWPF
 
         private void login_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow main = new MainWindow();
+            main.Show();
+            this.Close();
         }
     }
 }

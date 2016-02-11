@@ -59,7 +59,7 @@
             <Button Content="Submit"  Height="23" HorizontalAlignment="Left" Margin="329,254,0,0" Name="Submit" VerticalAlignment="Top" Width="70" Click="submit_click"/>
             <Button Content="Cancel" Height="23" HorizontalAlignment="Right" Margin="0,305,36,0" Name="cancel" VerticalAlignment="Top" Width="70" Click="cancel_click"/>
 
-
-        </Grid>
+        
+    </Grid>
     </Grid>
 </Window>

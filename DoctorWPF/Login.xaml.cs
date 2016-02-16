@@ -36,6 +36,7 @@ namespace DoctorWPF
             string regex = @"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$";
 
             if (textBoxEmail.Text.Length == 0)
+
             {
                 emailerrormessage.Text = "Enter an email.";
                 textBoxEmail.Focus();
@@ -57,57 +58,33 @@ namespace DoctorWPF
                 textBoxEmail.Select(0, passwordBox1.Password.Length);
                 textBoxEmail.Focus();
             }
-            else
+            else if(Regex.IsMatch(textBoxEmail.Text, regex) && Regex.IsMatch(textBoxEmail.Text, regex))
             {
                 DoctorEntities db = new DoctorEntities();
                 
                 string email = textBoxEmail.Text;
                 string password = passwordBox1.Password;
 
-                db.User.Find("Zanas");
-                User u = new User();
-                u.Email = email;
-                u.Password = password;
-                db.User.Add(u);
-                db.SaveChanges();
-
-                //SqlConnection con = new SqlConnection("Data Source=TESTPURU;Initial Catalog=Data;User ID=sa;Password=wintellect");
-                //con.Open();
-                //SqlCommand cmd = new SqlCommand("Select * from Registration where Email='" + email + "'  and password='" + password + "'", con);
-                //cmd.CommandType = CommandType.Text;
-                //SqlDataAdapter adapter = new SqlDataAdapter();
-                //adapter.SelectCommand = cmd;
-                //DataSet dataSet = new DataSet();
-                //adapter.Fill(dataSet);
-                //if (dataSet.Tables[0].Rows.Count > 0)
-                //{
-                //    string username = dataSet.Tables[0].Rows[0]["FirstName"].ToString() + " " + dataSet.Tables[0].Rows[0]["LastName"].ToString();
-                //welcome.TextBlockName.Text = username;//Sending value from one form to another form.
-                //welcome.Show();
-                //Close();
-                
+                //var user = db.User.Any(u => u.Email == textBoxEmail.Text);
+                if (db.User.Any(u => u.Email == textBoxEmail.Text))
+                {
+                    Journal j = new Journal();
+                    j.Show();
+                }
+                else   
+                {
+                    errormessage.Text = "Sorry! Please enter existing emailid/password.";
+                    Registration registration = new Registration();
+                    registration.Show();
+                    this.Close();
+                }
             }
         }       
-            //else
-            //{
-            //    errormessage.Text = "Sorry! Please enter existing emailid/password.";
-            //}
-        
 
         private void buttonRegister_Click(object sender, RoutedEventArgs e)
         {
             registration.Show();
             Close();
         }
-        private void buttonLogin_Click(object sender, RoutedEventArgs e)
-        {
-            Journal j = new Journal();
-            j.Show();
-            Close();
-        }
-
-        //private void textBoxEmail_TextChanged(object sender, TextChangedEventArgs e)
-        //{
-        //}
     }
 }

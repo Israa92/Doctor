@@ -29,47 +29,53 @@ namespace DoctorWPF
         }
 
         Registration registration = new Registration();
+        private bool Flag;
+
+        public bool CloseTrigger { get; private set; }
+
         //Welcome welcome = new Welcome();
-
-        private void Loginbutton_Click(object sender, RoutedEventArgs e)
+        public bool CheckLogin()
         {
-            string regex = @"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$";
+            DoctorEntities db = new DoctorEntities();
 
-            if (textBoxEmail.Text.Length == 0)
+            string email = textBoxEmail.Text;
+            string password = passwordBox1.Password;
+
+
+            var u = db.User.Where(i => i.Email == email && i.Password == password).SingleOrDefault();
+
+            if (u != null)
+
             {
-                emailerrormessage.Text = "Enter an email.";
-                textBoxEmail.Focus();
+
+                if ((u.Email == email) && (u.Password == password))
+                {
+                    MessageBox.Show("Welcome " + u.Email + ", you have successfully logged in.");
+                    Journal j = new Journal();
+                    j.Show();
+                    Close();
+                    CloseTrigger = true;
+                    Flag = true; //This doesn't work as it doesnt set the property Flag to true. Any ideas?
+
+                    return true;
+                }
+
+                else
+                    MessageBox.Show("enter email and password");
             }
-            else if (!Regex.IsMatch(textBoxEmail.Text, regex))
-            {
-                emailerrormessage.Text = "Enter a valid email.";
-                textBoxEmail.Select(0, textBoxEmail.Text.Length);
-                textBoxEmail.Focus();
-            }
-            if (passwordBox1.Password.Length == 0)
-            {
-                passworderrormessage.Text = "Enter an Password.";
-                textBoxEmail.Focus();
-            }
-            else if (!Regex.IsMatch(textBoxEmail.Text, regex))
-            {
-                passworderrormessage.Text = "Enter a valid Password.";
-                textBoxEmail.Select(0, passwordBox1.Password.Length);
-                textBoxEmail.Focus();
-            }
+
+
+
             else
-            {
-                DoctorEntities db = new DoctorEntities();
-                
-                string email = textBoxEmail.Text;
-                string password = passwordBox1.Password;
+                MessageBox.Show("Unable to Login, you have entered incorrect credentials.");
+                return false;
 
-                db.User.Find("Zanas");
-                User u = new User();
-                u.Email = email;
-                u.Password = password;
-                db.User.Add(u);
-                db.SaveChanges();
+            }
+
+
+        
+
+      
 
                 //SqlConnection con = new SqlConnection("Data Source=TESTPURU;Initial Catalog=Data;User ID=sa;Password=wintellect");
                 //con.Open();
@@ -85,25 +91,30 @@ namespace DoctorWPF
                 //welcome.TextBlockName.Text = username;//Sending value from one form to another form.
                 //welcome.Show();
                 //Close();
-                
-            }
-        }       
-            //else
-            //{
-            //    errormessage.Text = "Sorry! Please enter existing emailid/password.";
-            //}
-        
+
+           
+        //else
+        //{
+        //    errormessage.Text = "Sorry! Please enter existing emailid/password.";
+        //}
+
 
         private void buttonRegister_Click(object sender, RoutedEventArgs e)
         {
             registration.Show();
             Close();
         }
-        private void buttonLogin_Click(object sender, RoutedEventArgs e)
+       
+
+        private void textBoxEmail_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Journal j = new Journal();
-            j.Show();
-            Close();
+
+        }
+
+        private void Loginbutton_Click(object sender, RoutedEventArgs e)
+        {
+            CheckLogin();
+            
         }
 
         //private void textBoxEmail_TextChanged(object sender, TextChangedEventArgs e)

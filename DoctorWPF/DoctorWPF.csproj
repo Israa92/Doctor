@@ -66,16 +66,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DoctorDB.cs">
+    <Compile Include="Doctor.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DoctorDB.tt</DependentUpon>
+      <DependentUpon>Doctor.tt</DependentUpon>
     </Compile>
     <Compile Include="Journal.cs">
-      <DependentUpon>DoctorDB.tt</DependentUpon>
+      <DependentUpon>Doctor.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>DoctorDB.tt</DependentUpon>
+      <DependentUpon>Doctor.tt</DependentUpon>
     </Compile>
     <Page Include="Journal.xaml">
       <SubType>Designer</SubType>
@@ -96,15 +96,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DoctorDB.Context.cs">
+    <Compile Include="Doctor.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DoctorDB.Context.tt</DependentUpon>
+      <DependentUpon>Doctor.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DoctorDB.Designer.cs">
+    <Compile Include="Doctor.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DoctorDB.edmx</DependentUpon>
+      <DependentUpon>Doctor.edmx</DependentUpon>
     </Compile>
     <Compile Include="Journal.xaml.cs">
       <DependentUpon>Journal.xaml</DependentUpon>
@@ -137,12 +137,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DoctorDB.edmx">
+    <EntityDeploy Include="Doctor.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DoctorDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>Doctor.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DoctorDB.edmx.diagram">
-      <DependentUpon>DoctorDB.edmx</DependentUpon>
+    <None Include="Doctor.edmx.diagram">
+      <DependentUpon>Doctor.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -155,19 +155,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DoctorDB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DoctorDB.edmx</DependentUpon>
-      <LastGenOutput>DoctorDB.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DoctorDB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DoctorDB.edmx</DependentUpon>
-      <LastGenOutput>DoctorDB.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="Doctor.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Doctor.edmx</DependentUpon>
+      <LastGenOutput>Doctor.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Doctor.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Doctor.edmx</DependentUpon>
+      <LastGenOutput>Doctor.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

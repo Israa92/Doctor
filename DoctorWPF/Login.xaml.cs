@@ -64,8 +64,7 @@ namespace DoctorWPF
                 
                 string email = textBoxEmail.Text;
                 string password = passwordBox1.Password;
-
-                //var user = db.User.Any(u => u.Email == textBoxEmail.Text);
+                
                 if (db.Users.Any(u => u.Email == textBoxEmail.Text))
                 {
                     Journal j = new Journal();

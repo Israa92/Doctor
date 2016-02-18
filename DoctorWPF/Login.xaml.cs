@@ -36,13 +36,13 @@ namespace DoctorWPF
         //Welcome welcome = new Welcome();
         public bool CheckLogin()
         {
-            DoctorEntities db = new DoctorEntities();
+            DoctorEntities1 db = new DoctorEntities1();
 
             string email = textBoxEmail.Text;
             string password = passwordBox1.Password;
 
 
-            var u = db.User.Where(i => i.Email == email && i.Password == password).SingleOrDefault();
+            var u = db.Users.Where(i => i.Email == email && i.Password == password).SingleOrDefault();
 
             if (u != null)
 

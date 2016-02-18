@@ -46,10 +46,10 @@ namespace DoctorWPF
 
             if (u != null)
 
-            {
+        {
 
                 if ((u.Email == email) && (u.Password == password))
-                {
+            {
                     MessageBox.Show("Welcome " + u.Email + ", you have successfully logged in.");
                     Journal j = new Journal();
                     j.Show();
@@ -58,7 +58,7 @@ namespace DoctorWPF
                     //This doesn't work as it doesnt set the property Flag to true. Any ideas?
 
                     return true;
-                }
+            }
 
                 else
                     MessageBox.Show("enter email and password");
@@ -74,8 +74,8 @@ namespace DoctorWPF
 
 
         
+                
 
-      
 
                 //SqlConnection con = new SqlConnection("Data Source=TESTPURU;Initial Catalog=Data;User ID=sa;Password=wintellect");
                 //con.Open();

@@ -44,6 +44,7 @@
 
         <TextBlock Height="23" HorizontalAlignment="Left" x:Name ="emailerrormessage" VerticalAlignment="Top" Width="247" Margin="118,253,0,0"  OpacityMask="Crimson" Foreground="#FFE5572C"  />
         <TextBlock Height="23" HorizontalAlignment="Left" x:Name ="passworderrormessage" VerticalAlignment="Top" Width="247" Margin="118,253,0,0"  OpacityMask="Crimson" Foreground="#FFE5572C"  />
+        <TextBlock Height="23" HorizontalAlignment="Left" x:Name ="errormessage" VerticalAlignment="Top" Width="247" Margin="118,253,0,0"  OpacityMask="Crimson" Foreground="#FFE5572C"  />
     </Grid>
 
 </Window>

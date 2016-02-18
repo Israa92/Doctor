@@ -13,10 +13,10 @@ namespace DoctorWPF
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DoctorEntities : DbContext
+    public partial class DoctorEntities1 : DbContext
     {
-        public DoctorEntities()
-            : base("name=DoctorEntities")
+        public DoctorEntities1()
+            : base("name=DoctorEntities1")
         {
         }
     
@@ -25,7 +25,6 @@ namespace DoctorWPF
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Journal> Journal { get; set; }
-        public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }

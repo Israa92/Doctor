@@ -25,7 +25,6 @@
           <Property Name="Age" Type="int" Nullable="false" />
         </EntityType>
         <EntityContainer Name="DoctorModelStoreContainer">
-          <EntitySet Name="Journal" EntityType="Self.Journal" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
@@ -52,9 +51,8 @@
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Age" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="DoctorEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Journal" EntityType="Self.Journal" />
-          <EntitySet Name="User" EntityType="Self.User" />
+        <EntityContainer Name="DoctorEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="Self.User" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -97,7 +95,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

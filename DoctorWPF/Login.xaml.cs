@@ -29,36 +29,36 @@ namespace DoctorWPF
         }
 
         Registration registration = new Registration();
-      
 
-        
+
+
 
         //Welcome welcome = new Welcome();
         public bool CheckLogin()
         {
-            DoctorEntities1 db = new DoctorEntities1();
+            DoctorEntities db = new DoctorEntities();
 
             string email = textBoxEmail.Text;
             string password = passwordBox1.Password;
 
 
-            var u = db.Users.Where(i => i.Email == email && i.Password == password).SingleOrDefault();
+            var u = db.User.Where(i => i.Email == email && i.Password == password).SingleOrDefault();
 
             if (u != null)
 
-        {
+            {
 
                 if ((u.Email == email) && (u.Password == password))
-            {
+                {
                     MessageBox.Show("Welcome " + u.Email + ", you have successfully logged in.");
                     Journal j = new Journal();
                     j.Show();
                     Close();
-                   
+
                     //This doesn't work as it doesnt set the property Flag to true. Any ideas?
 
                     return true;
-            }
+                }
 
                 else
                     MessageBox.Show("enter email and password");
@@ -68,35 +68,10 @@ namespace DoctorWPF
 
             else
                 MessageBox.Show("Unable to Login, you have entered incorrect credentials.");
-                return false;
+            return false;
 
-            }
+        }
 
-
-        
-                
-
-
-                //SqlConnection con = new SqlConnection("Data Source=TESTPURU;Initial Catalog=Data;User ID=sa;Password=wintellect");
-                //con.Open();
-                //SqlCommand cmd = new SqlCommand("Select * from Registration where Email='" + email + "'  and password='" + password + "'", con);
-                //cmd.CommandType = CommandType.Text;
-                //SqlDataAdapter adapter = new SqlDataAdapter();
-                //adapter.SelectCommand = cmd;
-                //DataSet dataSet = new DataSet();
-                //adapter.Fill(dataSet);
-                //if (dataSet.Tables[0].Rows.Count > 0)
-                //{
-                //    string username = dataSet.Tables[0].Rows[0]["FirstName"].ToString() + " " + dataSet.Tables[0].Rows[0]["LastName"].ToString();
-                //welcome.TextBlockName.Text = username;//Sending value from one form to another form.
-                //welcome.Show();
-                //Close();
-
-           
-        //else
-        //{
-        //    errormessage.Text = "Sorry! Please enter existing emailid/password.";
-        //}
 
 
         private void buttonRegister_Click(object sender, RoutedEventArgs e)
@@ -104,7 +79,7 @@ namespace DoctorWPF
             registration.Show();
             Close();
         }
-       
+
 
         private void textBoxEmail_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -114,11 +89,7 @@ namespace DoctorWPF
         private void Loginbutton_Click(object sender, RoutedEventArgs e)
         {
             CheckLogin();
-            
-        }
 
-        //private void textBoxEmail_TextChanged(object sender, TextChangedEventArgs e)
-        //{
-        //}
+        }
     }
 }

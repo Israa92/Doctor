@@ -85,21 +85,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DoctorDB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DoctorDB.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DoctorDB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DoctorDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DoctorDB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DoctorDB.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Journal.xaml.cs">
       <DependentUpon>Journal.xaml</DependentUpon>
     </Compile>
@@ -131,13 +116,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DoctorDB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DoctorDB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="DoctorDB.edmx.diagram">
-      <DependentUpon>DoctorDB.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -150,18 +128,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DoctorDB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DoctorDB.edmx</DependentUpon>
-      <LastGenOutput>DoctorDB.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DoctorDB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DoctorDB.edmx</DependentUpon>
-      <LastGenOutput>DoctorDB.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

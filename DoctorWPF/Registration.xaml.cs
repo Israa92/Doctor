@@ -67,6 +67,7 @@ namespace DoctorWPF
                     DoctorEntities db = new DoctorEntities();
 
                     User u = new User();
+                   
                     u.UserName = username;
                     u.Email = email;
                     u.Age = age;

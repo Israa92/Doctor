@@ -29,9 +29,9 @@ namespace DoctorWPF
         }
 
         Registration registration = new Registration();
-        private bool Flag;
+      
 
-        public bool CloseTrigger { get; private set; }
+        
 
         //Welcome welcome = new Welcome();
         public bool CheckLogin()
@@ -54,8 +54,8 @@ namespace DoctorWPF
                     Journal j = new Journal();
                     j.Show();
                     Close();
-                    CloseTrigger = true;
-                    Flag = true; //This doesn't work as it doesnt set the property Flag to true. Any ideas?
+                   
+                    //This doesn't work as it doesnt set the property Flag to true. Any ideas?
 
                     return true;
                 }

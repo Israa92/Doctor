@@ -17,6 +17,6 @@ namespace DoctorWPF
         public int Id { get; set; }
         public decimal Socker { get; set; }
         public decimal BloodPressure { get; set; }
-        public decimal Cholesterol_ { get; set; }
+        public decimal Cholesterol { get; set; }
     }
 }

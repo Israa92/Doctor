@@ -74,7 +74,9 @@ namespace DoctorWPF
                     db.Users.Add(u);
                     db.SaveChanges();
 
-                    //lrkgw
+                    //lrkgwlm
+                    //lt,hewt
+                    //ölrfbwä
                 }
             }
         }

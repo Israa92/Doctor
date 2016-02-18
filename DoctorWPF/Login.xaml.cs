@@ -60,13 +60,13 @@ namespace DoctorWPF
             }
             else if(Regex.IsMatch(textBoxEmail.Text, regex) && Regex.IsMatch(textBoxEmail.Text, regex))
             {
-                DoctorEntities db = new DoctorEntities();
+                DoctorEntities1 db = new DoctorEntities1();
                 
                 string email = textBoxEmail.Text;
                 string password = passwordBox1.Password;
 
                 //var user = db.User.Any(u => u.Email == textBoxEmail.Text);
-                if (db.User.Any(u => u.Email == textBoxEmail.Text))
+                if (db.Users.Any(u => u.Email == textBoxEmail.Text))
                 {
                     Journal j = new Journal();
                     j.Show();

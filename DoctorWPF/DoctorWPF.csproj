@@ -71,9 +71,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Doctor.tt</DependentUpon>
     </Compile>
-    <Compile Include="Journal.cs">
-      <DependentUpon>Doctor.tt</DependentUpon>
-    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>Doctor.tt</DependentUpon>
     </Compile>

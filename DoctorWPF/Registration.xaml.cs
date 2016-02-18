@@ -64,14 +64,14 @@ namespace DoctorWPF
                 }
                 else
                 {
-                    DoctorEntities db = new DoctorEntities();
+                    DoctorEntities1 db = new DoctorEntities1();
 
                     User u = new User();
                     u.UserName = username;
                     u.Email = email;
                     u.Age = age;
                     u.Password = password;
-                    db.User.Add(u);
+                    db.Users.Add(u);
                     db.SaveChanges();
                 }
             }

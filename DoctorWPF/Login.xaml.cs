@@ -77,6 +77,7 @@ namespace DoctorWPF
                     Registration registration = new Registration();
                     registration.Show();
                     this.Close();
+                    //jnjm
                 }
             }
         }       

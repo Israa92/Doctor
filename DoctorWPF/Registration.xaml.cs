@@ -64,7 +64,7 @@ namespace DoctorWPF
                 }
                 else
                 {
-                    DoctorEntities1 db = new DoctorEntities1();
+                    DoctorEntities db = new DoctorEntities();
 
                     User u = new User();
                    
@@ -72,7 +72,7 @@ namespace DoctorWPF
                     u.Email = email;
                     u.Age = age;
                     u.Password = password;
-                    db.Users.Add(u);
+                    db.User.Add(u);
                     db.SaveChanges();
 
                     

@@ -73,6 +73,8 @@ namespace DoctorWPF
                     u.Password = password;
                     db.Users.Add(u);
                     db.SaveChanges();
+
+                    //lrkgw
                 }
             }
         }

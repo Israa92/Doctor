@@ -6,7 +6,26 @@
         xmlns:local="clr-namespace:DoctorWPF"
         mc:Ignorable="d"
         Title="Journal" Height="300" Width="300">
-    <Grid>
-        
+    <Grid Margin="0,0,-0.4,-3.8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="53*"/>
+            <RowDefinition Height="218*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="label" Content="Socker" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.396,1.565" Margin="19,8.2,0,0" Width="63" Height="26" Grid.Row="2"/>
+
+        <Label x:Name="label1" Content="BloodPressure" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.147,3.174" Margin="19,59.2,0,0" Height="26" Grid.Row="2" Width="85"/>
+
+        <Label x:Name="label2" Content="Cholesterol" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.089,5.5" Margin="19,110.2,0,0" Width="77" Height="26" Grid.Row="2"/>
+
+        <Button x:Name="button" Content="Control test" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="191,174.2,0,0" RenderTransformOrigin="0.536,-0.611" Height="23" Click="button_Click" Grid.Row="2"/>
+        <DockPanel>
+            <Frame x:Name="_NavigationFrame" NavigationUIVisibility="Hidden" />
+        </DockPanel>
+        <Label x:Name="label3" Content="Journalen" VerticalAlignment="Top" Margin="114,0,116,0" Grid.RowSpan="2" Height="26"/>
+        <TextBox x:Name="textBox_S" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="146,8.2,0,0" Grid.Row="2" TextChanged="textBox_socker_TextChanged"/>
+        <TextBox x:Name="textBox_B" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="146,59.2,0,0" Grid.Row="2" TextChanged="textBox_B_TextChanged"/>
+        <TextBox x:Name="textBox_C" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="146,110.2,0,0" Grid.Row="2" TextChanged="textBox_C_TextChanged"/>
+
     </Grid>
 </Window>

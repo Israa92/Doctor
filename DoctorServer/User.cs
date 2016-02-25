@@ -7,16 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DoctorWPF
+namespace DoctorServer
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Journal
+    public partial class User
     {
         public int Id { get; set; }
-        public decimal Socker { get; set; }
-        public decimal BloodPressure { get; set; }
-        public decimal Cholesterol_ { get; set; }
+        public string UserName { get; set; }
+        public string Email { get; set; }
+        public int Age { get; set; }
+        public string Password { get; set; }
     }
 }

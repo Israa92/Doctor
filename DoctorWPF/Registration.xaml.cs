@@ -22,6 +22,7 @@ namespace DoctorWPF
     /// </summary>
     public partial class Registration : Window
     {
+        Client c = new Client();
         public Registration()
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace DoctorWPF
 
         private void submit_click(object sender, RoutedEventArgs e)
         {
-            if (textBoxEmail.Text.Length == 0)
+            if (textBoxEmail.Text==null)
             {
                 errormessage.Text = "Enter an email!";
                 textBoxEmail.Focus();
@@ -47,6 +48,8 @@ namespace DoctorWPF
                 string email = textBoxEmail.Text;
                 int age = Convert.ToInt32(textBoxAge.Text);
                 string password = passwordBox1.Password;
+
+
                 if (passwordBox1.Password.Length == 0)
                 {
                     errormessage.Text = "Enter password.";
@@ -62,12 +65,11 @@ namespace DoctorWPF
                     errormessage.Text = "Confirm password must be same as password";
                     passwordBoxConfirm.Focus();
                 }
-                else
+                else if (!c.CheckOnRegister(textBoxEmail.Text))
                 {
                     DoctorEntities db = new DoctorEntities();
 
                     User u = new User();
-                   
                     u.UserName = username;
                     u.Email = email;
                     u.Age = age;
@@ -75,8 +77,14 @@ namespace DoctorWPF
                     db.User.Add(u);
                     db.SaveChanges();
 
-                    
                 }
+                else
+                {
+
+                }
+                Journal j = new Journal();
+                j.Show();
+                this.Close();//ít will close registering page
             }
         }
 

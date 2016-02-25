@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="Login" Height="400" Width="500">
     <Grid>
-        <Label x:Name="label" Content="&#x9;DOCTOR&#x9;" FontSize="18" FontWeight="ExtraBold"  HorizontalAlignment="Center" Height="35" Margin="160,0,113.6,0" VerticalAlignment="Top" Width="220"/>
+        <Label x:Name="label" Content="&#x9;DOCTOR&#x9;" FontSize="18" FontWeight="ExtraBold"  HorizontalAlignment="Center" Margin="160,0,113.6,335.4" Width="220"/>
 
 
         <TextBlock Height="50" HorizontalAlignment="Left" Margin="24,48,0,0" Name="textBlockHeading" VerticalAlignment="Top" FontSize="12" FontStyle="Italic" Padding="5">
@@ -26,7 +26,7 @@
 
             <!--end textblock as a hyperlink-->
 
-            
+
 
         </TextBlock>
 
@@ -36,15 +36,14 @@
 
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="58,168,0,0" Name="textBlock2" Text="Password" VerticalAlignment="Top" Width="77" />
 
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="118,115,0,0" Name="textBoxEmail" VerticalAlignment="Top" Width="247" Text="sanaz@yahoo.com" TextChanged="textBoxEmail_TextChanged" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="118,115,0,0" Name="textBoxEmail" VerticalAlignment="Top" Width="247"  TextChanged="textBoxEmail_TextChanged" />
 
-        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="118,168,0,0" Name="passwordBox1" VerticalAlignment="Top" Width="247" Password="sde123" />
+        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="118,168,0,0" Name="passwordBox1" VerticalAlignment="Top" Width="247"  />
 
         <Button Content="Login" Height="23" HorizontalAlignment="Left" Margin="118,211,0,0" Name="Loginbutton" VerticalAlignment="Top" Width="104" Click="Loginbutton_Click" />
 
-        <TextBlock Height="23" HorizontalAlignment="Left" x:Name ="emailerrormessage" VerticalAlignment="Top" Width="247" Margin="118,253,0,0"  OpacityMask="Crimson" Foreground="#FFE5572C"  />
-        <TextBlock Height="23" HorizontalAlignment="Left" x:Name ="passworderrormessage" VerticalAlignment="Top" Width="247" Margin="118,253,0,0"  OpacityMask="Crimson" Foreground="#FFE5572C"  />
-        <TextBlock Height="23" HorizontalAlignment="Left" x:Name ="errormessage" VerticalAlignment="Top" Width="247" Margin="118,253,0,0"  OpacityMask="Crimson" Foreground="#FFE5572C"  />
+        <TextBlock Height="23" HorizontalAlignment="Left" x:Name ="errormessage" VerticalAlignment="Top" Width="400" Margin="118,253,0,0"  OpacityMask="Crimson" Foreground="#FFE5572C"  />
+        <!--<TextBlock Height="23" HorizontalAlignment="Left" x:Name ="passworderrormessage" VerticalAlignment="Top" Width="247" Margin="118,253,0,0"  OpacityMask="Crimson" Foreground="#FFE5572C"  />-->
     </Grid>
 
 </Window>

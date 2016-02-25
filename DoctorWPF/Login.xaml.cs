@@ -30,9 +30,6 @@ namespace DoctorWPF
 
         Registration registration = new Registration();
 
-
-
-
         //Welcome welcome = new Welcome();
         public bool CheckLogin()
         {
@@ -42,7 +39,7 @@ namespace DoctorWPF
             string password = passwordBox1.Password;
 
 
-            var u = db.User.Where(i => i.Email == email && i.Password == password).SingleOrDefault();
+            var u = db.User.Where(i => i.Email == email && i.Password == password).FirstOrDefault();
 
             if (u != null)
 
@@ -59,12 +56,9 @@ namespace DoctorWPF
 
                     return true;
                 }
-
                 else
                     MessageBox.Show("enter email and password");
             }
-
-
 
             else
                 MessageBox.Show("Unable to Login, you have entered incorrect credentials.");

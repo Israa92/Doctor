@@ -10,10 +10,12 @@ namespace DoctorServer
     {
         static void Main(string[] args)
         {
-            DatabaseConnections gn = new DatabaseConnections();
-
-            Server server = new Server();
-            server.SocketServer("127.0.0.1", 8145);
+           
+                DatabaseConnections db = new DatabaseConnections();
+          
+                Server server = new Server();
+                server.SocketServer("127.0.0.1", 8145);
+            }
         }
     }
-}
+

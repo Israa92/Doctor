@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DoctorServer
 {
@@ -10,26 +7,49 @@ namespace DoctorServer
     {
         DoctorEntities db = new DoctorEntities();
         User user = new User();
-        public bool IsUserRegistered(string username)
+       
+        public bool IsUserRegisterad(string email)
         {
-            return db.User.Any(i => i.UserName == username);
+
+            return db.User.Any(i => i.Email == email);
+
         }
-        public void UserReg(string username, string email, string password, int age)
+        public void UserRegister(string username, string email, int age, string password)
         {
-            if (IsUserRegistered(username))
+            if (!IsUserRegisterad(email))
             {
                 username = user.UserName;
                 email = user.Email;
-                password = user.Password;
                 age = user.Age;
+                password = user.Password;
+                db.User.Add(user);
+                db.SaveChanges();
+
+            }
+            else
+                Console.WriteLine("Use other Username or email to register");
+
+        }
+        public bool IsUserLoggedIn(string email)
+        {
+            return db.User.Any(i => i.Email == email);
+        }
+
+        public void UserLoggedIn(string email, string password)
+        {
+            if (IsUserLoggedIn(email))
+            {
+                email = user.Email;
+                password = user.Password;
 
                 db.User.Add(user);
                 db.SaveChanges();
             }
             else
             {
-                Console.WriteLine("The username or email is already existed"); 
+                Console.WriteLine("Email not exist");
             }
         }
     }
 }
+

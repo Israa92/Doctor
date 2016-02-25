@@ -30,60 +30,74 @@ namespace DoctorWPF
 
         Registration registration = new Registration();
 
-        //Welcome welcome = new Welcome();
-        public bool CheckLogin()
-        {
-            DoctorEntities db = new DoctorEntities();
-
-            string email = textBoxEmail.Text;
-            string password = passwordBox1.Password;
-
-
-            var u = db.User.Where(i => i.Email == email && i.Password == password).FirstOrDefault();
-
-            if (u != null)
-
-            {
-
-                if ((u.Email == email) && (u.Password == password))
-                {
-                    MessageBox.Show("Welcome " + u.Email + ", you have successfully logged in.");
-                    Journal j = new Journal();
-                    j.Show();
-                    Close();
-
-                    //This doesn't work as it doesnt set the property Flag to true. Any ideas?
-
-                    return true;
-                }
-                else
-                    MessageBox.Show("enter email and password");
-            }
-
-            else
-                MessageBox.Show("Unable to Login, you have entered incorrect credentials.");
-            return false;
-
-        }
-
-
-
         private void buttonRegister_Click(object sender, RoutedEventArgs e)
         {
             registration.Show();
             Close();
         }
 
+        private void Loginbutton_Click(object sender, RoutedEventArgs e)
+            {
+
+            Client c = new Client();
+            if (c.CheckOnRegister(textBoxEmail.Text))
+                {
+                //MessageBox.Show("welcome");
+                    Journal j = new Journal();
+                    j.Show();
+                this.Close();
+            }
+            else
+            {
+                errormessage.Text = "Email is not found.To Register please Click on Register Button.";
+
+            }
+
+                }
 
         private void textBoxEmail_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
-
-        private void Loginbutton_Click(object sender, RoutedEventArgs e)
-        {
-            CheckLogin();
-
-        }
     }
-}
+            }
+
+
+
+//Welcome welcome = new Welcome();
+//public bool CheckLogin()
+//{
+
+//    string email = textBoxEmail.Text;
+//    string password = passwordBox1.Password;
+
+
+//    var u = db.User.Where(i => i.Email == email && i.Password == password).FirstOrDefault();
+
+//    if (u != null)
+
+//    {
+
+//        if ((u.Email == email) && (u.Password == password))
+//        {
+//            MessageBox.Show("Welcome " + u.Email + ", you have successfully logged in.");
+//            Journal j = new Journal();
+//            j.Show();
+//            Close();
+
+//            This doesn't work as it doesnt set the property Flag to true. Any ideas?
+
+//            return true;
+//        }
+
+//        else
+//            MessageBox.Show("enter email and password");
+//    }
+
+
+
+//    else
+//        MessageBox.Show("Unable to Login, you have entered incorrect credentials.");
+//    return false;
+
+//}

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DoctorServer
+namespace DoctorWPF
 {
     using System;
     using System.Collections.Generic;

@@ -10,7 +10,9 @@ namespace DoctorServer
 {
     class Server
     {
+        
         DatabaseConnections db = new DatabaseConnections();
+       
         static UnicodeEncoding encoding = new UnicodeEncoding();
         static Socket listeningSocket = null;
         static Socket socket = null;
@@ -18,6 +20,7 @@ namespace DoctorServer
 
         public void SocketServer(string ip, int port)
         {
+         
             IPAddress ipAddress = IPAddress.Parse(ip);
             IPEndPoint localEndPoint = new IPEndPoint(ipAddress, port);
             try
@@ -33,18 +36,21 @@ namespace DoctorServer
                 socket.Receive(buffer);
                 String message = encoding.GetString(buffer);
 
-                bool test = db.IsUserRegistered(message);
+                bool test = db.IsUserRegisterad(message);
                 string result;
-                if (test)
+
+
+                if(test)
                 {
                     result = "1";
+
                 }
                 else
                 {
                     result = "0";
                 }
-                Console.WriteLine("Received message: " + message);
-               
+                //gn.IsUserRegisterad(message, message);//to send db..
+                Console.WriteLine("Recived Message:" + message);
                 byte[] resp = encoding.GetBytes(result);
                 socket.Send(resp);
 

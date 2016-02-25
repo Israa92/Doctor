@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C3ECF302-09F0-47C1-9AE2-CA65651635E0}</ProjectGuid>
+    <ProjectGuid>{B8CB34AC-C175-4C1E-86B1-370287B864FB}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DoctorServer</RootNamespace>
